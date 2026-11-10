@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700;900&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #050505;
+  color: #f5f5f5;
+  font-family: Inter, Arial, sans-serif;
+  min-height: 100vh;
+}
+a { color: inherit; text-decoration: none; }
+
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 78px;
+  padding: 0 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  background: linear-gradient(#050505, transparent);
+}
+.brand img { width: 54px; height: 54px; object-fit: contain; }
+.nav nav { display: flex; gap: 34px; font-size: 11px; font-weight: 700; letter-spacing: .18em; }
+.nav nav a { opacity: .75; transition: opacity .2s; }
+.nav nav a:hover { opacity: 1; }
+.menu { display: none; background: none; border: 0; color: white; font-size: 24px; }
+
+.hero {
+  min-height: 100vh;
+  padding: 130px 8vw 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: "MTB";
+  position: absolute;
+  right: -5vw;
+  bottom: -10vw;
+  font-family: Anton, Impact, sans-serif;
+  font-size: 38vw;
+  line-height: .7;
+  color: rgba(255,255,255,.025);
+  pointer-events: none;
+}
+.hero-logo { margin-bottom: 35px; }
+.hero-logo img { width: clamp(100px, 14vw, 180px); height: auto; }
+.eyebrow, .section-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .28em;
+  opacity: .55;
+}
+h1, h2 {
+  font-family: Anton, Impact, sans-serif;
+  font-weight: 400;
+  letter-spacing: .01em;
+  line-height: .88;
+}
+h1 { font-size: clamp(62px, 10.5vw, 160px); margin: 18px 0 28px; }
+h1 span, h2 span { color: #777; }
+.intro { font-size: 12px; line-height: 1.7; letter-spacing: .12em; opacity: .65; }
+.cta {
+  margin-top: 35px;
+  width: fit-content;
+  border: 1px solid #333;
+  padding: 15px 20px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  transition: .2s;
+}
+.cta:hover { background: white; color: black; }
+.cta span { margin-left: 25px; }
+
+.section {
+  min-height: 75vh;
+  padding: 110px 8vw;
+  border-top: 1px solid #171717;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section h2 { font-size: clamp(60px, 11vw, 160px); margin-top: 25px; }
+.contact p:last-child { margin-top: 30px; opacity: .5; font-size: 13px; }
+
+footer {
+  padding: 30px 5vw;
+  border-top: 1px solid #171717;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  letter-spacing: .16em;
+  opacity: .5;
+}
+
+@media (max-width: 650px) {
+  .nav { height: 68px; padding: 0 6vw; }
+  .brand img { width: 46px; }
+  .nav nav { display: none; }
+  .menu { display: block; }
+  .hero { padding: 105px 6vw 60px; }
+  h1 { font-size: clamp(54px, 16vw, 100px); }
+  .hero-logo img { width: 110px; }
+  .section { padding: 85px 6vw; min-height: 65vh; }
+  footer { padding: 25px 6vw; flex-direction: column; gap: 10px; }
+}
